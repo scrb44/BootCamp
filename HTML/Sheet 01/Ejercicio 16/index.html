@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="nombre">Nombre:</label>
+        <input type="text" maxlength="30" id="nombre" name="nombre">
+        <br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" maxlength="30" id="apellidos" name="apellidos">
+        <br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <br>
+
+        <label for="asunto">Asunto:</label>
+        <select id="asunto" size="3" name="asunto">
+            <option value="presupuesto">Pedir presupuesto</option>
+            <option value="cita">Solicitar cita previa</option>
+            <option value="otro">Otros</option>
+        </select>
+        <br>
+
+        <p>¿Cómo nos ha conocido?</p>
+        <label><input type="checkbox" name="conocido[]" value="amigo"> Un amigo</label><br>
+        <label><input type="checkbox" name="conocido[]" value="google"> Googleando</label><br>
+        <label><input type="checkbox" name="conocido[]" value="buzoneo"> Buzoneo</label><br>
+        <label><input type="checkbox" name="conocido[]" value="otros"> Otros</label><br>
+
+        <br>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" maxlength="300"></textarea>
+        <br>
+
+        <input type="checkbox" id="check" required><label for="check">Aceptación de la clausula rgpd</label>
+        <br><br>
+
+        <button type="submit">Ahí va eso</button>
+    </form>
+</body>
+</html>
