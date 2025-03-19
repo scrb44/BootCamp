@@ -6,6 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="#">
+        <p>Tipo de consulta:</p>
+        <input type="checkbox" name="consulta[]" id="general">
+        <label for="general">General</label>
+        
+        <input type="checkbox" name="consulta[]" id="Especialidad">
+        <label for="Especialidad">Especialidad</label>
+        
+        <input type="checkbox" name="consulta[]" id="Urgencias">
+        <label for="Urgencias">Urgencias</label>
+        <br>
+        <br>
+
+        <label for="fecha">Fecha y hora:</label>
+        <input type="datetime-local" name="fecha" id="fecha">
+        <br>
+
+        <label for="sintomas">Descripción de los síntomas:</label>
+        <br>
+        <textarea name="sintomas" id="sintomas"></textarea>
+        <br>
+
+        <label for="documentos">Documentos requeridos</label>
+        <input type="file" name="documentos" id="documentos">
+        <br>
+
+        <label for="medico">Médico preferente:</label>
+        <select name="medico" id="medico">
+            <option value="1">Doctor 1</option>
+            <option value="2">Doctor 2</option>
+            <option value="3">Doctor 3</option>
+            <option value="4">Doctor 4</option>
+        </select>
+        <br>
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
