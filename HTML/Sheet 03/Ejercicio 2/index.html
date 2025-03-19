@@ -6,6 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="#">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br>
+
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="apellido" id="apellido" required>
+        <br>
+
+        <label for="email">Correo electrónico: </label>
+        <input type="email" name="email" id="email" required>
+        <br>
+
+        <label for="tlfn">Teléfono: </label>
+        <input type="tel" name="tlfn" id="tlfn" pattern="[0-9]{10}">
+        <br>
+
+        <label for="fnac">Fecha de nacimiento: </label>
+        <input type="date" name="fnac" id="fnac" required>
+        <br>
+        
+        <p>
+            Género:
+            <input type="radio" name="genero" id="hombre" value="hombre">
+            <label for="hombre">Hombre</label>
+            <input type="radio" name="genero" id="mujer" value="mujer">
+            <label for="mujer">Mujer</label>
+            <input type="radio" name="genero" id="otro" value="otro">
+            <label for="otro">Otro</label>
+        </p>
+        
+        <input type="checkbox" name="terms" id="terms" required>
+        <label for="terms">Acepto los Términos y condiciones</label>
+        <br>
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
