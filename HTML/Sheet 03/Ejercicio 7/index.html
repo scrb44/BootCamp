@@ -6,6 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!--
+    <div>
+        <label>Usuario</label>
+        <input type="text">
+        </div>
+        <div>
+        <label>Contraseña</label>
+        <input type="password">
+        </div>
+        <div>
+        <label>Comentario</label>
+        <textarea></textarea>
+    </div>
+    <button>Enviar</button>
+    -->
+
+    <form action="#">
+        <fieldset>
+            <label for="user" aria-label="Usuario">Usuario: </label>
+            <input type="text" name="user" id="user" aria-describedby="Input">
+        </fieldset>
+
+        <fieldset>
+            <label for="psswd" aria-label="Contraseña">Contraseña: </label>
+            <input type="password" name="psswd" id="psswd" aria-describedby="Input">
+        </fieldset>
+
+        <fieldset>
+            <label for="coment" aria-label="Comentario">Comentario: </label>
+            <br>
+            <textarea name="coment" id="coment" aria-describedby="Textarea"></textarea>
+        </fieldset>
+        <button type="submit" aria-label="Enviar" aria-describedby="Button">Enviar</button>
+    </form>
 </body>
 </html>
