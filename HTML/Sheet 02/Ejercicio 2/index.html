@@ -6,6 +6,84 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="#">
     
+        <fieldset>
+            <legend>Información Personal</legend>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <br>
+
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <br>
+
+            <p>
+                Género:
+                <input type="radio" name="genero" id="Hombre" value="hombre" required>
+                <label for="Hombre">Hombre</label>
+                <input type="radio" name="genero" id="Mujer" value="mujer" required>
+                <label for="Mujer">Mujer</label>
+                <input type="radio" name="genero" id="Otro" value="otro" required>
+                <label for="Otro">Otro</label>
+            </p>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Información de Contacto</legend>
+
+            <label for="email">Dirección de correo electrónico:</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+
+            <label for="tlfn">Número de Teléfono:</label>
+            <input type="tel" name="tlfn" id="tlfn" required>
+            <br>
+
+            <label for="direccion">Dirección:</label>
+            <textarea name="direccion" id="direccion"></textarea>
+            <br>
+
+            <label for="nombreUsuario">Nombre de Usuario:</label>
+            <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Información de Cuenta</legend>
+            
+            <label for="psswd">Contraseña:</label>
+            <input type="password" name="psswd" id="psswd" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$"
+            title="Debe tener entre 8 y 20 caracteres, incluyendo al menos una minúscula, una mayúscula, un número y un carácter especial (@$!%*#?&)"
+            required>
+            <br>
+            
+            <label for="psswdConfirm">Confirmación de contraseña: </label>
+            <input type="password" name="psswdConfirm" id="psswdConfirm" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferencias</legend>
+            <label for="color"></label>
+            <select name="color" id="color">
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="amarillo">Amarillo</option>
+            </select>
+            <br>
+            
+            
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms">Acepto los Términos y condiciones</label>
+        </fieldset>
+            
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
