@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ejercicio 17</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .grid-container {
+                display: grid;
+                width: 100%;
+                background-color: bisque;
+                row-gap: 5px;
+                column-gap: 5px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .grid-container > div {
+                background-color: aquamarine;
+                margin: 3px;
+            }
+            .grid-item {
+                grid-column: span 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item">Elemento que ocupa dos colum nas</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+            <div>Item 6</div>
+        </div>
+    </body>
 </html>
