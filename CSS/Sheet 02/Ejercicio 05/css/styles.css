@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+}
+.flex-container > div {
+    background-color: aquamarine;
+    margin: 3px;
+}
+.item {
+    flex: 0 1 auto;
+}
+.flexible {
+    flex: 1;
+}
