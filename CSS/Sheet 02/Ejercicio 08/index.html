@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <style>
+            .bounce-box {
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+                position: relative;
+                animation: moverse 5s infinite alternate;
+            }
+
+            @keyframes moverse {
+                from {
+                    transform: translateY(0px);
+                }
+                to {
+                    transform: translateY(300px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bounce-box">Estoy rebotando</div>
+    </body>
+</html>
