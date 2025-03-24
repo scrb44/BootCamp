@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ejercicio 22</title>
+        <style>
+            .animate-box {
+                background-color: aquamarine;
+                width: max-content;
+                position: relative;
+                animation: moverse 3s infinite alternate;
+            }
+
+            @keyframes moverse {
+                from {
+                    left: 0%;
+                }
+                to {
+                    left: 90%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="animate-box">Cuadro animado</div>
+    </body>
 </html>
