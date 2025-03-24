@@ -1,0 +1,11 @@
+/* styles.css (completa con el contenido que falte) */
+.animate-box {
+    width: 100px;
+    height: 100px;
+    margin: 20%;
+    background-color: lightcoral;
+    transition: 1.5s ease-in-out;
+}
+.animate-box:hover {
+    transform: scale(1.5);
+}
