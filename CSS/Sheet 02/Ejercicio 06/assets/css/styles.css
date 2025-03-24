@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-container > div {
+    text-align: center;
+    background-color: aquamarine;
+    margin: 5px
+}
+
+.large {
+    grid-column: span 2;
+}
