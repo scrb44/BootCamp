@@ -5,7 +5,7 @@
 
 .item {
     background-color: lightblue;
-    width: minmax(30px, 20%);
+    width: max(30px, 20%);
     padding: 5px;
     margin: 5px;
 }
