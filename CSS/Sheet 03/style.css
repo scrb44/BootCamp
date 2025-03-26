@@ -1,5 +1,6 @@
 :root{
-    --onHoverText: gray
+    --onHoverText: gray;
+    --fondoGris : lightgrey;
 }
 
 body{
@@ -9,7 +10,19 @@ body{
     display: flex;
     flex-direction: column;
     box-sizing: content-box;
+    text-align: center;
 }
+
+button{
+    color: black;
+    padding: 5px 20px;
+    border: 2px solid grey; 
+    border-radius: 3px;
+    &:hover{
+        color: var(--onHoverText);
+    }
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -45,11 +58,26 @@ nav ul > * {
 
 nav button{
     background-color: white;
-    color: black;
-    padding: 3px 20px;
-    border: 2px solid grey; 
-    border-radius: 3px;
-    &:hover{
-        color: var(--onHoverText);
-    }
+}
+
+header{
+    background-color: var(--fondoGris);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+header article {
+    width: 48%;
+    margin: 10% 0%;
+}
+
+header button {
+    background-color: #222;
+    border-color: #222;
+    color: #eee;
+}
+
+header h2{
+    margin-bottom: 40px;
 }
