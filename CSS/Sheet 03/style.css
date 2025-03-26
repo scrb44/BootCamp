@@ -1,0 +1,55 @@
+:root{
+    --onHoverText: gray
+}
+
+body{
+    margin: 0% 5%;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10% 5% 0% 5%;
+}
+
+nav h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+
+    &:hover{
+        color: var(--onHoverText);
+    }
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul > * {
+    padding: 5px;
+    margin: 4px;
+}
+
+
+nav button{
+    background-color: white;
+    color: black;
+    padding: 3px 20px;
+    border: 2px solid grey; 
+    border-radius: 3px;
+    &:hover{
+        color: var(--onHoverText);
+    }
+}
