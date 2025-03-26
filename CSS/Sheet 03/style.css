@@ -23,6 +23,12 @@ button{
     }
 }
 
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -42,12 +48,6 @@ nav a{
     &:hover{
         color: var(--onHoverText);
     }
-}
-
-nav ul{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
 }
 
 nav ul > * {
@@ -80,4 +80,50 @@ header button {
 
 header h2{
     margin-bottom: 40px;
+}
+
+main {
+    margin: 0% 5% 0% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > article {
+    width: 70%;
+}
+
+main > article h2 {
+    font-weight: 200;    
+}
+
+main section {
+    text-align: justify;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+main article div:first-child {
+    background-color: black;
+    height: 100px;
+    width: 100%;
+}
+
+main section article {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+main button {
+    border: none;
+    background-color: white;
+}
+
+main section article div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
