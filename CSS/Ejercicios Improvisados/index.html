@@ -7,6 +7,32 @@
         <style>
             .rebota {
                 background-color: aquamarine;
+                width: max-content;
+                animation: rebotar 2s infinite linear;
+            }
+
+            @keyframes rebotar {
+                0% {
+                    translate: 0 0;
+                }
+                10% {
+                    translate: 10px -10px;
+                }
+                30% {
+                    translate: 30px 100px;
+                }
+                50% {
+                    translate: 50px 50px;
+                }
+                70% {
+                    translate: 70px 100px;
+                }
+                90% {
+                    translate: 90px 75px;
+                }
+                100% {
+                    translate: 100px 100px;
+                }
             }
         </style>
     </head>
