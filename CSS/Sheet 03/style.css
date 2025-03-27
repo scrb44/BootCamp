@@ -2,6 +2,10 @@
     --onHoverText: gray;
     --fondoGris : lightgrey;
 }
+html{
+    display: flex;
+    justify-content: center;
+}
 
 body{
     margin: 0% 5%;
@@ -11,6 +15,7 @@ body{
     flex-direction: column;
     box-sizing: content-box;
     text-align: center;
+    max-width: 1440px;
 }
 
 button{
@@ -133,23 +138,71 @@ footer {
     margin-bottom: 5%;
     background-color: var(--fondoGris);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 footer > div {
     width: 20%;
     text-align: center;
+    margin-left: 1%;
 }
 footer > ul {
     display: flex;
     flex-direction: row;
     width: max-content;
+    margin-right: 3%;
 }
 
-footer ul li {
+footer > ul li {
     align-self: center;
 }
 
 footer ul li ul {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav  ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li:not(:last-child) {
+        background-color: var(--fondoGris);
+
+        &:hover {
+            background-color: var(--onHoverText);
+        }
+    }
+
+    header article{
+        width: 90%;
+    }
+
+    main section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer > div:first-child {
+        width: max-content;
+    }
+
+    footer > ul:nth-child(2) {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    footer > ul:nth-child(2) ul {
+        padding: 10px 0;
+    }
 }
