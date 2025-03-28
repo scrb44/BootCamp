@@ -2,8 +2,14 @@
     --fondo-Amarillo: #FFE62C;
     --fondo-Mejillas-Rojas: #EA2A2A;
     --fondo-Orejas-Negras: #000000;
-    --fuente-Nombre-Pokemon: Creative Fabrica;
-    --fuente-Nombre-Tipo: Arial;
+    --color-Carta-Fondo-Imagen: #DFDFDF;
+    --color-Carta-Fondo-Texto: #FFFFFF;
+    --color-fondo-id: #D1CDCA;
+    --color-texto-id: #8F7864;
+    --color-barra-evolucion: #795546;
+    --fuente-id: Ubuntu;
+    --fuente-Nombre-Pokemon: Ubuntu, Creative Fabrica;
+    --fuente-Nombre-Tipo: Ubuntu;
     --tamanio-Mofletes: 6rem;
     --tamanio-Orejas: 4rem;
 }
@@ -41,6 +47,11 @@
     top: calc(var(--tamanio-Orejas)*(-0.5));
     right: calc(var(--tamanio-Orejas)*(-0.5));
 }
+
+.sombra {
+    box-shadow: 0px 4px 10px #00000033, 0px 8px 20px #ffdf0099;
+}
+
 html {
     display: flex;
     justify-content: center;
@@ -50,4 +61,109 @@ body {
     background-color: var(--fondo-Amarillo);
     width: 80%;
     margin: 0;
+}
+
+.barra-busqueda {
+    padding-top: 5%;
+}
+
+.barra-busqueda-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+main {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.carta {
+    max-width: 150px;
+    width: 100%;
+    background-color: var(--color-Carta-Fondo-Texto);
+    margin-bottom: 10px;
+}
+
+.carta-header {
+    width: 100%;
+    background-color: var(--color-Carta-Fondo-Imagen);
+    padding: 0;
+    position: relative;
+}
+.carta-header-centrar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carta-header-id{
+    display: inline;
+    background-color: var(--color-fondo-id);
+    color: var(--color-texto-id);
+    font-size: small;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--fuente-id);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+
+.carta-section {
+    padding: 10px;
+}
+
+.carta-section > h2 {
+    margin: 0;
+}
+
+.section-container-tipos {
+    padding-top: 3px;
+}
+
+.tipo {
+    background-color: #FFFFFFFF;
+    font-size: .6em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0;
+    box-shadow: 0px 4px 10px #00000033, 0px 8px 20px #ffffff88;
+    padding: 1px 4px;
+
+    color: var(--color-texto-id);
+    border: 1px solid var(--color-texto-id);
+}
+
+.carta-footer {
+    border-left: 2px solid var(--color-barra-evolucion);
+    padding-left: 2px;
+    margin-top: 8px;
+}
+
+.carta-footer-p1 {
+    color: var(--color-texto-id);
+    font-size: 0.55em;
+    margin: 0;
+}
+.carta-footer-p2 {
+    margin: 0;
+    text-transform: lowercase;
+}
+
+@media only screen and (max-width: 381px) {
+    main {
+        justify-content: center;
+    }
 }
