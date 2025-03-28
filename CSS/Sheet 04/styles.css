@@ -60,6 +60,7 @@ html {
 body {
     background-color: var(--fondo-Amarillo);
     width: 80%;
+    max-width: 1440px;
     margin: 0;
 }
 
