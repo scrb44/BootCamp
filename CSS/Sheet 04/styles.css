@@ -137,6 +137,7 @@ main {
 .section-container-tipos {
     padding-top: 3px;
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
 }
 
