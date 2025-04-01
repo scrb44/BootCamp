@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function saludar(nombre) {
+                console.log("Buenos días " + nombre);
+            }
+            function mayor(a, b) {
+                if (!(typeof a == "number")) return NaN;
+                if (!(typeof b == "number")) return NaN;
+
+                return a >= b ? a : b;
+            }
+            const pi = Math.PI,
+                e = Math.E;
+            saludar("Sofía");
+            console.log(`El mayor entre\n${pi} y ${e} es:\n${mayor(pi, e)}`);
+        </script>
+    </head>
+    <body></body>
+</html>
