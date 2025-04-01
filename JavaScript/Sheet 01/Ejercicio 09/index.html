@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //Primera parte del ejercicio
+            function reverse(palabra) {
+                if (!(typeof palabra == "string")) {
+                    return palabra + " no es un string";
+                }
+                return palabra.split("").reverse().join("");
+            }
+
+            console.log(reverse("Hola"));
+            console.log(reverse(2));
+
+            //Segunda parte del ejercicio
+            function contarVocales(palabra) {
+                if (!(typeof palabra == "string")) {
+                    return palabra + " no es un string";
+                }
+
+                return (palabra.match(/[aeiou]/g) || []).length;
+            }
+
+            let a = "Hola buenas tardes";
+            console.log(a + "\nTiene " + contarVocales(a) + " vocales");
+            a = "0 v0c4l3s";
+            console.log(a + "\nTiene " + contarVocales(a) + " vocales");
+
+            a = 4;
+            console.log(contarVocales(a));
+
+            a =
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, repellat provident error, esse autem soluta quaerat dolores modi tempore reprehenderit, atque rem et! Facilis atque aut optio modi quia aperiam?";
+
+            console.log(a + "\nTiene " + contarVocales(a) + " vocales");
+        </script>
+    </head>
+    <body></body>
+</html>
