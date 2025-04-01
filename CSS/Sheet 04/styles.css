@@ -167,10 +167,6 @@ main {
     text-transform: lowercase;
 }
 
-.carta {
-
-}
-
 @keyframes fadeInUp {
     from {
         transform: translateY(100px);
