@@ -94,6 +94,10 @@ main {
 
 .carta {
     background-color: var(--color-Carta-Fondo-Texto);
+
+    animation: fadeInUp 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .carta-header {
@@ -161,4 +165,20 @@ main {
 .carta-footer-p2 {
     margin: 0;
     text-transform: lowercase;
+}
+
+.carta {
+
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: .2;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
