@@ -12,6 +12,7 @@
     --fuente-Nombre-Tipo: Ubuntu;
     --tamanio-Mofletes: 6rem;
     --tamanio-Orejas: 4rem;
+    --tamanio-Cartas: 150px;
 }
 
 .moflete {
@@ -20,6 +21,7 @@
     background-color: var(--fondo-Mejillas-Rojas);
     border-radius: 50%;
     position: fixed;
+    z-index: -1;
 }
 .moflete-izquierda{
     bottom: calc(var(--tamanio-Mofletes)*(-0.5));
@@ -36,6 +38,7 @@
     background-color: var(--fondo-Orejas-Negras);
     position: fixed;
     rotate: 45deg;
+    z-index: -1;
 }
 
 .oreja-izquierda {
@@ -84,16 +87,13 @@ main {
     margin-top: 1rem;
     margin-bottom: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fill, minmax(var(--tamanio-Cartas), 1fr));
     justify-content: space-between;
-    gap: 5px;
+    gap: 10px 5px;
 }
 
 .carta {
-    max-width: 150px;
-    width: 100%;
     background-color: var(--color-Carta-Fondo-Texto);
-    margin-bottom: 10px;
 }
 
 .carta-header {
@@ -161,10 +161,4 @@ main {
 .carta-footer-p2 {
     margin: 0;
     text-transform: lowercase;
-}
-
-@media only screen and (max-width: 381px) {
-    main {
-        justify-content: center;
-    }
 }
