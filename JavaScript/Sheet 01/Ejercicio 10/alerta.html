@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function mensaje() {
+                let input = document.getElementById("text");
+                let texto = input.value;
+
+                if (texto == "") texto = "Sin mensaje";
+
+                input.value = "";
+
+                console.log(texto);
+                alert(texto);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="text" />
+        <button id="boton" onclick="mensaje()">Pulsar</button>
+    </body>
+</html>
