@@ -1,0 +1,138 @@
+/* Tipos de Pokémon con gradiente */
+
+.tipo {
+    font-size: .6em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0;
+    position: relative;
+    color: transparent;
+    border: none;
+    transition: 0.2s;
+
+    --grad1: #ffffff;
+    --grad2: #ffffff;
+
+    background: linear-gradient(135deg, var(--grad1), var(--grad2));
+    background-clip: text;
+}
+
+/*
+.tipo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+*/
+
+.tipo::after, .tipo::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+
+}
+
+.tipo::before {
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.tipo::after{
+    padding: 1px;
+    background-image: linear-gradient(135deg, var(--grad1), var(--grad2));
+    z-index: -2;
+}
+
+.tipo-normal {
+    --grad1: #A8A878;
+    --grad2: #DAD8A0;
+}
+
+.tipo-fuego {
+    --grad1: #F08030;
+    --grad2: #F8B05A;
+}
+
+.tipo-agua {
+    --grad1: #6890F0;
+    --grad2: #98C8F0;
+}
+
+.tipo-planta {
+    --grad1: #78C850;
+    --grad2: #A8E05A;
+}
+
+.tipo-electrico {
+    --grad1: #F8D030;
+    --grad2: #FAE078;
+}
+
+.tipo-hielo {
+    --grad1: #98D8D8;
+    --grad2: #C2F0F0;
+}
+
+.tipo-lucha {
+    --grad1: #C03028;
+    --grad2: #D87868;
+}
+
+.tipo-veneno {
+    --grad1: #A040A0;
+    --grad2: #C080C0;
+}
+
+.tipo-tierra {
+    --grad1: #E0C068;
+    --grad2: #F0DC82;
+}
+
+.tipo-volador {
+    --grad1: #A890F0;
+    --grad2: #C8B8F0;
+}
+
+.tipo-psiquico {
+    --grad1: #F85888;
+    --grad2: #F8A0B0;
+}
+
+.tipo-bicho {
+    --grad1: #A8B820;
+    --grad2: #C8D850;
+}
+
+.tipo-roca {
+    --grad1: #B8A038;
+    --grad2: #D8C068;
+}
+
+.tipo-fantasma {
+    --grad1: #705898;
+    --grad2: #9078B8;
+}
+
+.tipo-dragón {
+    --grad1: #7038F8;
+    --grad2: #9068F0;
+}
+
+.tipo-siniestro {
+    --grad1: #705848;
+    --grad2: #907860;
+}
+
+.tipo-acero {
+    --grad1: #B8B8D0;
+    --grad2: #D8D8F0;
+}
+
+.tipo-hada {
+    --grad1: #EE99AC;
+    --grad2: #F4BDC4;
+}
