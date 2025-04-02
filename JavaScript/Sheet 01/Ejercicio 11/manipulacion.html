@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function aniadir() {
+                let elem = document.createElement("li");
+                let cajaTexto = document.getElementById("texto");
+                let texto = cajaTexto.value;
+                let lista = document.getElementById("lista");
+
+                cajaTexto.value = "";
+                texto = texto.trim();
+                elem.innerText = texto;
+
+                if (texto == "") {
+                    alert("El texto no puede estar vacío");
+                } else {
+                    lista.appendChild(elem);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="texto" />
+        <button onclick="aniadir()">Añadir elemento</button>
+        <ul id="lista"></ul>
+    </body>
+</html>
