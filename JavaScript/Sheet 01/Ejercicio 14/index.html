@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .acierto {
+                color: green;
+            }
+            .fallo {
+                color: red;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const adivinar = Math.floor(Math.random() * 100) + 1;
+                const aux = document.getElementById("numero");
+                const adivina = document.getElementById("adivina");
+                const texto = document.getElementById("texto");
+
+                console.log(adivinar);
+                adivina.addEventListener("click", function () {
+                    let mensaje = "";
+                    let numero = parseInt(aux.value);
+                    aux.value = "";
+
+                    if (isNaN(numero)) {
+                        mensaje =
+                            "Debes dar un número con el cual intentar adivinar";
+                        texto.className = "";
+                    } else {
+                        if (numero == adivinar) {
+                            mensaje = "¡¡Enhorabuena, acertaste el número!!";
+                            texto.className = "acierto";
+                        } else if (numero > adivinar) {
+                            mensaje =
+                                "El número a adivinar es menor que " + numero;
+                            texto.className = "fallo";
+                        } else {
+                            mensaje =
+                                "El número a adivinar es mayor que " + numero;
+                            texto.className = "fallo";
+                        }
+                    }
+                    texto.innerText = mensaje;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="number" id="numero" placeholder="Dame un número" />
+        <br />
+        <button id="adivina">Adivinar</button>
+        <br />
+        <p id="texto"></p>
+    </body>
+</html>
