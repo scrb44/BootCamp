@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function revertirCadena(texto) {
+                return texto.split("").reverse().join("");
+            }
+            function esPalindromo(texto) {
+                let textoTratado = texto.replace(/[\s,]/g, "").toUpperCase();
+
+                return textoTratado == revertirCadena(textoTratado);
+            }
+            // Ejemplo de uso
+            const texto = "A man, a plan, a canal, Panama";
+            console.log(esPalindromo(texto)); // true
+            console.log(esPalindromo("Hola mundo")); // false
+        </script>
+    </head>
+    <body></body>
+</html>
