@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            let sofia = {
+                nombre: "Sofía",
+                edad: 26,
+                ciudad: "Málaga",
+            };
+
+            console.log(sofia);
+
+            function describirPersona(per) {
+                if (!per.hasOwnProperty("nombre")) {
+                    console.log("La persona no tiene nombre");
+                    return;
+                }
+                if (!per.hasOwnProperty("edad")) {
+                    console.log("La persona no tiene edad");
+                    return;
+                }
+                if (!per.hasOwnProperty("ciudad")) {
+                    console.log("La persona no tiene ciudad");
+                    return;
+                }
+                console.log(
+                    `Nombre: ${per.nombre}, Edad ${per.edad}, Ciudad: ${per.ciudad}`
+                );
+            }
+            describirPersona({ nombre: "Hola", edad: 2 });
+            describirPersona(sofia);
+        </script>
+    </head>
+    <body></body>
+</html>
