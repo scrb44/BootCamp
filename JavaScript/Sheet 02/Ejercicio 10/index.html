@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function palabraMasLarga(palabras) {
+                console.log("Hola");
+                console.log(palabras[0].length);
+                let masLarga = palabras.reduce(
+                    (larga, palabra) =>
+                        palabra.length > larga.length ? palabra : larga,
+                    ""
+                );
+
+                console.log(masLarga);
+                return masLarga;
+            }
+            // Ejemplo de uso
+            const palabras = ["hola", "mundo", "javascript", "programación"];
+            console.log(palabraMasLarga(palabras)); // "programación"
+        </script>
+    </head>
+    <body></body>
+</html>
