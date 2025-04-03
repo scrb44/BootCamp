@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //Parte 1 del ejercicio
+            let dias = [
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado",
+                "Domingo",
+            ];
+            for (let i = 0; i < dias.length; i++) {
+                console.log(dias[i]);
+            }
+            // Parte 2 del ejercicio
+            function sumarArrays(arr) {
+                let suma = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    if (!(typeof arr[i] == "number")) return NaN;
+                    suma += arr[i];
+                }
+                return suma;
+            }
+
+            let numeros = [2, 4, 6, 1, 3];
+            console.log(
+                "La suma de\n" + numeros + "\nEs: " + sumarArrays(numeros)
+            );
+        </script>
+    </head>
+    <body></body>
+</html>
