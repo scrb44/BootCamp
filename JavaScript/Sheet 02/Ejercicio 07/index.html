@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function contarVocales(palabra) {
+                if (!(typeof palabra == "string")) {
+                    return palabra + " no es un string";
+                }
+
+                return (palabra.match(/[aeiou]/g) || []).length;
+            }
+
+            // Ejemplo de uso
+            const texto = "Hola Mundo";
+            console.log(contarVocales(texto)); // 4
+        </script>
+    </head>
+    <body></body>
+</html>
