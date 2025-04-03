@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            input {
+                width: 300px;
+            }
+        </style>
+        <script>
+            function aleatorio() {
+                let aux1 = document.getElementById("numInf").value;
+                let aux2 = document.getElementById("numSup").value;
+
+                let inf = parseInt(aux1) ? parseInt(aux1) : 0;
+                let sup = parseInt(aux2) ? parseInt(aux2) : 10;
+
+                if (sup > inf) {
+                    let aleatorio = Math.random() * (sup - inf + 1) + inf;
+                    aleatorio = Math.floor(aleatorio);
+
+                    document.getElementById("aleatorio").innerText =
+                        "El número aleatorio es: " + aleatorio;
+                } else {
+                    document.getElementById("aleatorio").innerText =
+                        "El número superior debe ser mayor al inferior";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input
+            type="number"
+            id="numInf"
+            placeholder="Número inferior del rango por defecto 0"
+        />
+        <br />
+        <input
+            type="number"
+            id="numSup"
+            placeholder="Número superior del rango por defecto 10"
+        />
+        <br />
+        <button onclick="aleatorio()">Generar aleatorio</button>
+        <p id="aleatorio"></p>
+    </body>
+</html>
