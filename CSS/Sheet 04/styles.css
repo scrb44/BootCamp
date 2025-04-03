@@ -72,7 +72,7 @@ body {
 }
 
 .barra-busqueda-input {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
     text-align: center;
     font-size: 1em;
@@ -137,27 +137,8 @@ main {
 .section-container-tipos {
     padding-top: 3px;
     display: flex;
+    gap: 6px;
     flex-wrap: wrap;
-    gap: 4px;
-}
-
-.tipo {
-    background-color: #FFFFFFFF;
-    font-size: .6em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    margin: 0;
-    box-shadow: 0px 4px 10px #00000033, 0px 8px 20px #ffffff88;
-    padding: 1px 4px;
-    text-shadow: 1px 1px 8px rgb(255, 255, 255);
-
-    color: var(--color-texto-id);
-    border: 1px solid var(--color-texto-id);
-    transition: 0.2s;
-
-    &:hover {
-        transform: scale(1.1);
-    }
 }
 
 .carta-footer {
@@ -186,113 +167,4 @@ main {
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-/* Tipos de Pokémon con gradiente */
-.tipo-normal {
-    background: linear-gradient(135deg, #A8A878, #DAD8A0);
-    color: #6D6D4E;
-    border-color: #6D6D4E;
-}
-
-.tipo-fuego {
-    background: linear-gradient(135deg, #F08030, #F8B05A);
-    color: #9C531F;
-    border-color: #9C531F;
-}
-
-.tipo-agua {
-    background: linear-gradient(135deg, #6890F0, #98C8F0);
-    color: #445E9C;
-    border-color: #445E9C;
-}
-
-.tipo-planta {
-    background: linear-gradient(135deg, #78C850, #A8E05A);
-    color: #4E8234;
-    border-color: #4E8234;
-}
-
-.tipo-electrico {
-    background: linear-gradient(135deg, #F8D030, #FAE078);
-    color: #A1871F;
-    border-color: #A1871F;
-}
-
-.tipo-hielo {
-    background: linear-gradient(135deg, #98D8D8, #C2F0F0);
-    color: #638D8D;
-    border-color: #638D8D;
-}
-
-.tipo-lucha {
-    background: linear-gradient(135deg, #C03028, #D87868);
-    color: #7D1F1A;
-    border-color: #7D1F1A;
-}
-
-.tipo-veneno {
-    background: linear-gradient(135deg, #A040A0, #C080C0);
-    color: #682A68;
-    border-color: #682A68;
-}
-
-.tipo-tierra {
-    background: linear-gradient(135deg, #E0C068, #F0DC82);
-    color: #927D44;
-    border-color: #927D44;
-}
-
-.tipo-volador {
-    background: linear-gradient(135deg, #A890F0, #C8B8F0);
-    color: #6D5E9C;
-    border-color: #6D5E9C;
-}
-
-.tipo-psiquico {
-    background: linear-gradient(135deg, #F85888, #F8A0B0);
-    color: #A13959;
-    border-color: #A13959;
-}
-
-.tipo-bicho {
-    background: linear-gradient(135deg, #A8B820, #C8D850);
-    color: #6D7815;
-    border-color: #6D7815;
-}
-
-.tipo-roca {
-    background: linear-gradient(135deg, #B8A038, #D8C068);
-    color: #786824;
-    border-color: #786824;
-}
-
-.tipo-fantasma {
-    background: linear-gradient(135deg, #705898, #9078B8);
-    color: #493963;
-    border-color: #493963;
-}
-
-.tipo-dragón {
-    background: linear-gradient(135deg, #7038F8, #9068F0);
-    color: #4924A1;
-    border-color: #4924A1;
-}
-
-.tipo-siniestro {
-    background: linear-gradient(135deg, #705848, #907860);
-    color: #49392F;
-    border-color: #49392F;
-}
-
-.tipo-acero {
-    background: linear-gradient(135deg, #B8B8D0, #D8D8F0);
-    color: #787887;
-    border-color: #787887;
-}
-
-.tipo-hada {
-    background: linear-gradient(135deg, #EE99AC, #F4BDC4);
-    color: #9B6470;
-    border-color: #9B6470;
 }
