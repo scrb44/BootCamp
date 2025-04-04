@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+                boton.addEventListener("click", togleImg);
+            }
+
+            function togleImg() {
+                const img = document.querySelector("img");
+                const img1 = "https://www.educima.com/imagen-alegre-s19863.jpg";
+                const img2 = "https://www.educima.com/imagen-triste-s19861.jpg";
+
+                img.src = img.src == img1 ? img2 : img1;
+            }
+        </script>
+    </head>
+    <body>
+        <button>Cambiar imagen</button>
+        <br />
+        <img src="https://www.educima.com/imagen-alegre-s19863.jpg" alt="" />
+    </body>
+</html>
