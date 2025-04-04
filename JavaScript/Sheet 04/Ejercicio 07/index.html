@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .caja {
+                width: 400px;
+                height: 400px;
+
+                background-color: lightcoral;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", cambiarEstilo);
+            }
+
+            function cambiarEstilo() {
+                document
+                    .querySelectorAll(".caja")
+                    .forEach((elem) => (elem.style.backgroundColor = "yellow"));
+            }
+        </script>
+    </head>
+    <body>
+        <button>Cambiar color</button>
+        <br />
+        <div class="caja"></div>
+        <br />
+        <div class="caja"></div>
+        <br />
+        <div class="caja"></div>
+    </body>
+</html>
