@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejercicio 5</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const botonError = document.querySelector("button");
+
+                botonError.addEventListener("click", error);
+            }
+
+            function error(ev) {
+                const nombre = document.querySelector("input");
+                const mensajeError = document.querySelector("#error");
+
+                if (nombre.value == "") {
+                    ev.preventDefault();
+                    mensajeError.style = "color: red";
+                    mensajeError.textContent = "Por favor, rellena el campo";
+                } else {
+                    mensajeError.style = "display: none";
+                    mensajeError.textContent = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="formulario" method="GET">
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingresa tu nombre"
+            />
+            <button type="submit">Enviar</button>
+            <p id="error" style="display: none"></p>
+        </form>
+    </body>
+</html>
