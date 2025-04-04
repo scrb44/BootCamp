@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", aniadirLI);
+            }
+
+            function aniadirLI() {
+                const ul = document.querySelector("ul");
+                const li = document.createElement("li");
+                li.textContent = "Elemento nuevo";
+
+                ul.appendChild(li);
+            }
+        </script>
+    </head>
+    <body>
+        <button>Agregar elemento</button>
+        <ul></ul>
+    </body>
+</html>
