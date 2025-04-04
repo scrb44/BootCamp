@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const suma = document.querySelector("button:first-child");
+                const resta = document.querySelector(
+                    "button:not(:first-child)"
+                );
+
+                suma.addEventListener("click", sumaUno);
+                resta.addEventListener("click", restaUno);
+            }
+            function getP() {
+                const p = document.querySelector("p");
+                let num = parseInt(p.textContent);
+
+                num = num ? num : 0;
+                return [p, num];
+            }
+
+            function sumaUno() {
+                let [p, n] = getP();
+
+                p.innerText = n + 1;
+            }
+
+            function restaUno() {
+                const [p, n] = getP();
+
+                p.textContent = n - 1;
+            }
+        </script>
+    </head>
+    <body>
+        <button>Incrementar</button>
+        <p>0</p>
+        <button>Decrementar</button>
+    </body>
+</html>
