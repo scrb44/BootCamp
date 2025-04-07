@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejercicio 10</title>
+        <style>
+            .error {
+                border: 2px solid red;
+                background-color: #ffe6e6;
+            }
+            .exito {
+                border: 2px solid green;
+                background-color: #e6ffe6;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const correo = document.getElementById("correo");
+                const text = document.querySelector("input[type='text']");
+
+                correo.addEventListener("change", verificacion);
+                text.addEventListener("change", verificacion);
+            }
+
+            function verificacion(self) {
+                const input = self.target;
+                console.log(self);
+
+                input.classList = "";
+
+                if (input.value == "") {
+                    input.classList.add("error");
+                    input.setCustomValidity("Este campo debe estar relleno");
+                } else {
+                    input.classList.add("exito");
+                    input.setCustomValidity("");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="formulario">
+            <input
+                type="email"
+                id="correo"
+                placeholder="Ingresa tu correo electrónico"
+            />
+            <input type="text" placeholder="Ingresa tu dirección" />
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
