@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .seleccionado {
+                background-color: aqua;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+            function main() {
+                const ul = document.getElementById("tareas");
+
+                ul.addEventListener("click", changeClass);
+            }
+
+            function changeClass(self) {
+                const li = self.target;
+
+                if (li.tagName == "LI") {
+                    li.parentNode.querySelectorAll("li").forEach((elem) => {
+                        elem.classList.remove("seleccionado");
+                    });
+                    li.classList.add("seleccionado");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="tareas">
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+            <li>Tarea 3</li>
+        </ul>
+    </body>
+</html>
