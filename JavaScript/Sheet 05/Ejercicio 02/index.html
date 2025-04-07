@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function loginUsuario() {
+                return new Promise((resolve) => {
+                    setTimeout(() => resolve("usuario123"), 1000);
+                });
+            }
+            function obtenerPerfil(user) {
+                return new Promise((resolve) => {
+                    setTimeout(
+                        () => resolve({ nombre: user, rol: "admin" }),
+                        1000
+                    );
+                });
+            }
+            function mostrarDashboard(perfil) {
+                return new Promise((resolve) => {
+                    resolve(`Bienvenida, ${perfil.nombre} (${perfil.rol})`);
+                });
+            }
+
+            loginUsuario().then((user) => {
+                console.log(user);
+                obtenerPerfil("Sofia").then((data) => {
+                    console.log(data);
+
+                    mostrarDashboard(data).then((text) => {
+                        console.log(text);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
