@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function espera(ms) {
+                return new Promise((resolve) => setTimeout(resolve, ms));
+            }
+            async function cuentaRegresiva() {
+                for (let x = 3; x > 0; x--) {
+                    console.log(x + "...");
+                    await espera(1000);
+                }
+                console.log("¡Despegue!");
+            }
+            cuentaRegresiva();
+        </script>
+    </head>
+    <body></body>
+</html>
