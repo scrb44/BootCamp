@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .resaltado {
+                background-color: yellow;
+                height: 100px;
+                width: 100px;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", cambiarClase);
+            }
+            function cambiarClase() {
+                const resal = document.querySelector("div");
+                resal.classList.toggle("resaltado");
+            }
+        </script>
+    </head>
+    <body>
+        <button>Alternar resaltado</button>
+        <br />
+        <div class="resaltado"></div>
+    </body>
+</html>
