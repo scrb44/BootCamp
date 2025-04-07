@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function obtenerTemperatura() {
+                return new Promise((resolve) => {
+                    setTimeout(() => resolve("22ºC"), 2000);
+                });
+            }
+            function obtenerHumedad() {
+                return new Promise((resolve) => {
+                    setTimeout(() => resolve("60%"), 2000);
+                });
+            }
+            function obtenerViento() {
+                return new Promise((resolve) => {
+                    setTimeout(() => resolve("15 km/h"), 2000);
+                });
+            }
+            async function clima() {
+                Promise.all([
+                    obtenerTemperatura(),
+                    obtenerHumedad(),
+                    obtenerViento(),
+                ]).then((valores) => {
+                    const text = `===Clima===\nTemperatura: ${valores[0]}\nHumedad: ${valores[1]}\nViento: ${valores[2]}`;
+                    console.log(text);
+                });
+            }
+            clima();
+        </script>
+    </head>
+    <body></body>
+</html>
