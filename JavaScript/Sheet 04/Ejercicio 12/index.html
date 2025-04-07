@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .grande {
+                font-size: larger;
+            }
+
+            .borde {
+                border: 1px red solid;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", aniadir);
+            }
+
+            function aniadir() {
+                const div = document.querySelector("div");
+
+                div.classList.add("grande", "borde");
+            }
+        </script>
+    </head>
+    <body>
+        <button>Agregar clases</button>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+            laboriosam in optio distinctio earum quas quidem voluptatem repellat
+            temporibus dolorem. Commodi dolor ab exercitationem temporibus ex
+            architecto ad dolore deleniti.
+        </div>
+    </body>
+</html>
