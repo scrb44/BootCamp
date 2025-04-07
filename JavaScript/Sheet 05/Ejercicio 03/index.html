@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function obtenerPerfil() {
+                return new Promise((resolve, reject) => {
+                    let x = 10 * Math.random();
+
+                    if (x > 5) {
+                        resolve("Todo bien");
+                    } else {
+                        reject(404);
+                    }
+                });
+            }
+
+            obtenerPerfil()
+                .then((mensaje) => {
+                    console.log(mensaje);
+                })
+                .catch((fallo) => {
+                    console.log("Error al obtener el perfil");
+                    console.log(`Algo salió mal: ${fallo}`);
+                });
+        </script>
+    </head>
+    <body></body>
+</html>
