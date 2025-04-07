@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .activo {
+                background-color: aquamarine;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", cambiar);
+            }
+
+            function cambiar() {
+                document.querySelectorAll("div").forEach((div) => {
+                    div.classList.toggle("activo");
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <button>Cambiar todos</button>
+        <div>Texto de relleno numero 1</div>
+        <div class="activo">Texto de relleno numero 2</div>
+        <div>Texto de relleno numero 3</div>
+        <div>Texto de relleno numero 4</div>
+    </body>
+</html>
