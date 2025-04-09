@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", usarAPI);
+
+            async function usarAPI() {
+                const url = "https://jsonplaceholder.typicode.com/users";
+                const p = document.querySelector("p");
+                const data = await fetch(url);
+                let text = "";
+
+                if (!data.ok) {
+                    throw new Error(data.status);
+                }
+                const personas = await data.json();
+
+                text = "Usuarios:\n";
+                personas.forEach((persona) => {
+                    text += `- ${persona.name}\n`;
+                });
+
+                p.innerText = text;
+            }
+        </script>
+    </head>
+    <body>
+        <p></p>
+    </body>
+</html>
