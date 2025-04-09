@@ -1,0 +1,49 @@
+:root{
+    --tamanio-jugador: 20px;
+    --color-bg: #1f2c9c;
+    --color-jugador: #de8833;
+}
+
+body {
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+h1{
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.jugador{
+    width: var(--tamanio-jugador);
+    height: var(--tamanio-jugador);
+    background-color: var(--color-jugador);
+    position: absolute;
+    top: calc(50% - var(--tamanio-jugador)/2);
+    left: calc(50% - var(--tamanio-jugador)/2);
+    z-index: 0;
+}
+
+body.eliminado {
+    transition: background-color 1s linear;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.eliminado {
+    display: none;
+}
+
+h1.eliminado{
+    transition: color 1s linear;
+    color: red;
+}
