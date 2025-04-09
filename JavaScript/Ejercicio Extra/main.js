@@ -1,6 +1,6 @@
 import {moverJugador, calcularTamanio} from './jugador.js';
 
-const tiempoCuenta = 1;
+const tiempoCuenta = 60;
 let body = "";
 let jugador = "";
 let contador = "";
