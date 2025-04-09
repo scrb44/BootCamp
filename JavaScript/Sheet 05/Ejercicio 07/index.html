@@ -7,23 +7,24 @@
         <script>
             document.addEventListener("DOMContentLoaded", usarAPI);
 
-            async function usarAPI() {
+            function usarAPI() {
                 const url = "https://jsonplaceholder.typicode.com/users";
                 const p = document.querySelector("p");
-                const data = await fetch(url);
                 let text = "";
 
-                if (!data.ok) {
-                    throw new Error(data.status);
-                }
-                const personas = await data.json();
+                fetch(url).then((data) => {
+                    if (!data.ok) {
+                        throw new Error(data.status);
+                    }
+                    data.json().then((personas) => {
+                        text = "Usuarios:\n";
+                        personas.forEach((persona) => {
+                            text += `- ${persona.name}\n`;
+                        });
 
-                text = "Usuarios:\n";
-                personas.forEach((persona) => {
-                    text += `- ${persona.name}\n`;
+                        p.innerText = text;
+                    });
                 });
-
-                p.innerText = text;
             }
         </script>
     </head>
