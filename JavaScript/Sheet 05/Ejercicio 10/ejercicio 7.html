@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", usarAPI);
+
+            function usarAPI() {
+                //const url = "https://jsonplaceholder.typicode.com/users"; // Esta es la URL buena
+                const url = "https://jsonplaceholder.typicod.com/users"; // Esta url esta modificada para que falle
+                const p = document.querySelector("p");
+                let text = "";
+
+                fetch(url)
+                    .then((data) => {
+                        if (!data.ok) {
+                            throw new Error(data.status);
+                        }
+                        data.json()
+                            .then((personas) => {
+                                text = "Usuarios:\n";
+                                personas.forEach((persona) => {
+                                    text += `- ${persona.name}\n`;
+                                });
+
+                                p.innerText = text;
+                            })
+                            .catch((error) => {
+                                console.log(error.message);
+                            });
+                    })
+                    .catch((error) => {
+                        console.log(error.message);
+                        p.innerText = "Fallo en la conexión con el servidor";
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        <p></p>
+    </body>
+</html>

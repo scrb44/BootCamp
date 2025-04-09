@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", postea);
+                usarAPI();
+            }
+
+            async function usarAPI() {
+                //const url = "https://jsonplaceholder.typicode.com/users"; // Esta es la URL buena
+                const url = "https://jsonplaceholder.typicod.com/users"; // Esta url esta modificada para que falle
+                const p = document.querySelector("#info");
+                let data = "";
+                let personas = [];
+                let text = "";
+
+                try {
+                    data = await fetch(url);
+                    if (!data.ok) {
+                        throw new Error(data.status);
+                    }
+                    personas = await data.json();
+                } catch (error) {
+                    console.log(error.message);
+                    text = "Fallo en la conexión con el servidor";
+                }
+
+                text = text ? text : "Usuarios:\n";
+                console.log(text);
+                personas.forEach((persona) => {
+                    text += `- ${persona.name}\n`;
+                });
+
+                p.innerText = text;
+            }
+
+            async function postea(e) {
+                e.preventDefault();
+                const title = document.getElementById("title");
+                const body = document.getElementById("body");
+                //const url = "https://jsonplaceholder.typicode.com/posts"; // Esta es la URL buena
+                const url = "https://jsonplaceholder.typicod.com/posts"; // Esta url esta modificada para que falle
+                let response = "";
+
+                try {
+                    response = await fetch(url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                            title: title,
+                            body: body,
+                        }),
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                        },
+                    });
+                    if (!response.ok) {
+                        throw new Error(response.status);
+                    }
+                    console.log(response);
+                    document.querySelector("#formularioResponse").innerText =
+                        "Petición enviada";
+                } catch (error) {
+                    console.log(error.message);
+                    document.querySelector("#formularioResponse").innerText =
+                        "Fallo al contactar con el servidor";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p id="info"></p>
+        <form action="POST">
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title" />
+
+            <br />
+            <label for="body">Cuerpo</label>
+            <input type="text" name="body" id="body" />
+            <br />
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="formularioResponse"></p>
+    </body>
+</html>

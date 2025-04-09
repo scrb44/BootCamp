@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", main);
+
+            function main() {
+                const boton = document.querySelector("button");
+
+                boton.addEventListener("click", postea);
+            }
+
+            function postea(e) {
+                e.preventDefault();
+                const title = document.getElementById("title");
+                const body = document.getElementById("body");
+                //const url = "https://jsonplaceholder.typicode.com/posts"; // Esta es la URL buena
+                const url = "https://jsonplaceholder.typicod.com/posts"; // Esta url esta modificada para que falle
+
+                fetch(url, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        title: title,
+                        body: body,
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                    },
+                })
+                    .then((response) => {
+                        console.log(response);
+                        document.querySelector("p").innerText =
+                            "Petición enviada";
+                    })
+                    .catch((error) => {
+                        console.log(error.message);
+                        document.querySelector("p").innerText =
+                            "Fallo en el envio de peticion";
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        <form action="POST">
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title" />
+
+            <br />
+            <label for="body">Cuerpo</label>
+            <input type="text" name="body" id="body" />
+            <br />
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p></p>
+    </body>
+</html>
