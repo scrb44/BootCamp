@@ -100,6 +100,10 @@ body {
     animation-range: entry 0% cover 20%;
 }
 
+.no-buscada{
+    display: none;
+}
+
 .carta-header {
     width: 100%;
     background-color: var(--color-Carta-Fondo-Imagen);

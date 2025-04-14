@@ -19,37 +19,58 @@ async function getFromApi(url) {
 }
 
 export async function getVariousPokemons(cargar, offset) {
-    const preData = await getFromApi(
-        `${url}pokemon/?limit=${cargar}&offset=${offset}`
+    const pokemons = [];
+
+    const uncachedIDs = [];
+    const uncachedIndexes = [];
+
+    for (let i = 0; i < cargar; i++) {
+        const id = offset + i + 1; // Los IDs empiezan en 1
+        const cached = localStorage.getItem(`poke-${id}`);
+
+        if (cached) {
+            pokemons[i] = JSON.parse(cached);
+        } else {
+            uncachedIDs.push(id);
+            uncachedIndexes.push(i);
+        }
+    }
+
+    // Peticiones solo para los no cacheados
+    const pokemonPromises = uncachedIDs.map((id) =>
+        getFromApi(`${url}pokemon/${id}`)
     );
+    const pokemonsRaw = await Promise.all(pokemonPromises);
 
-    const data = preData.results;
+    const speciesPromises = pokemonsRaw.map((p) => getFromApi(p.species.url));
+    const speciesData = await Promise.all(speciesPromises);
 
-    let pokemons = [];
-
-    for (let i = 0; i < data.length; i++) {
-        const pokemon = data[i];
-
-        const dataPokProm = await getFromApi(pokemon.url);
-        const especie = await getFromApi(dataPokProm.species.url);
+    pokemonsRaw.forEach((dataPokProm, i) => {
+        const especie = speciesData[i];
         const prePok = especie.evolves_from_species
             ? especie.evolves_from_species.name
             : "";
 
-        let tipos = [];
-        dataPokProm.types.forEach((tipo) => {
-            tipos.push(tipo.type.name);
-        });
+        const tipos = dataPokProm.types.map((tipo) => tipo.type.name);
 
-        const dataPok = {
+        const pokeInfo = {
             id: dataPokProm.id,
             name: dataPokProm.name,
             types: tipos,
             preevolucion: prePok,
             img: dataPokProm.sprites.front_default,
+            fav: false,
         };
-        pokemons.push(dataPok);
-    }
+
+        const index = uncachedIndexes[i];
+        pokemons[index] = pokeInfo;
+
+        // Guardamos en cache con ID
+        localStorage.setItem(
+            `poke-${dataPokProm.id}`,
+            JSON.stringify(pokeInfo)
+        );
+    });
 
     return pokemons;
 }
