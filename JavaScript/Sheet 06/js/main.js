@@ -9,7 +9,7 @@ let section = "";
 async function main() {
     section = document.querySelector("section");
     inicializarBuscador();
-    mostrarDeUnoEnUnoHasta(1000);
+    mostrarDeUnoEnUnoHasta(1302);
 }
 
 async function mostrarDeUnoEnUnoHasta(tope, loteSize = 10) {
