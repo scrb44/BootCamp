@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface PokeData {
+    id: number;
+    nombre: string;
 }
 
-export default App
+function App() {
+    const [pokemones, setPokemones] = useState<PokeData[]>([]);
+    const url = "https://pokeapi.co/api/v2/pokemon/";
+
+    // const pokemons = [1];
+    const pokemons = [1, 5, 200, 105, 20];
+
+    useEffect(() => {
+        let controller = new AbortController();
+
+        pokemons.map((pokeID) => {
+            try {
+                fetch(url + pokeID, { signal: controller.signal })
+                    .then((res) => res.json())
+                    .then((res) => {
+                        setPokemones((a) => [
+                            ...a,
+                            { id: pokeID, nombre: res.name },
+                        ]);
+                    });
+            } catch (error) {
+                console.log(error);
+            }
+        });
+        return () => controller.abort();
+    }, []);
+
+    return (
+        <>
+            {pokemones.map((pok) => (
+                <p key={pok.id}>{pok.nombre}</p>
+            ))}
+        </>
+    );
+}
+
+export default App;
