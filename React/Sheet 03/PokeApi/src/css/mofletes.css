@@ -1,0 +1,20 @@
+.moflete {
+    --fondo-Mofletes-Rojas: #ea2a2a;
+    --tamanio-Mofletes: 6rem;
+
+    height: var(--tamanio-Mofletes);
+    width: var(--tamanio-Mofletes);
+    background-color: var(--fondo-Mofletes-Rojas);
+    border-radius: 50%;
+    position: fixed;
+    z-index: -1;
+}
+
+.moflete-izquierda {
+    bottom: calc(var(--tamanio-Mofletes) * (-0.5));
+    left: calc(var(--tamanio-Mofletes) * (-0.5));
+}
+.moflete-derecha {
+    bottom: calc(var(--tamanio-Mofletes) * (-0.5));
+    right: calc(var(--tamanio-Mofletes) * (-0.5));
+}

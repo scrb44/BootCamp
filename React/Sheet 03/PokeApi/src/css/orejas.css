@@ -1,0 +1,21 @@
+.oreja {
+    --fondo-Orejas-Negras: #000000;
+    --tamanio-Orejas: 4rem;
+
+    height: var(--tamanio-Orejas);
+    width: var(--tamanio-Orejas);
+    background-color: var(--fondo-Orejas-Negras);
+    position: fixed;
+    rotate: 45deg;
+    z-index: -1;
+}
+
+.oreja-izquierda {
+    top: calc(var(--tamanio-Orejas) * (-0.5));
+    left: calc(var(--tamanio-Orejas) * (-0.5));
+}
+
+.oreja-derecha {
+    top: calc(var(--tamanio-Orejas) * (-0.5));
+    right: calc(var(--tamanio-Orejas) * (-0.5));
+}

@@ -1,0 +1,11 @@
+.poke-container {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(var(--tamanio-Cartas), 1fr)
+    );
+    justify-content: space-between;
+    gap: 10px 5px;
+}

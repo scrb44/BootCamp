@@ -1,0 +1,12 @@
+:root {
+    --fondo-Amarillo: #ffe62c;
+    --color-carta-fondo-imagen: #dfdfdf;
+    --color-carta-fondo-texto: #ffffff;
+    --tamanio-Cartas: 150px;
+    --color-fondo-id: #d1cdca;
+    --color-texto-id: #8f7864;
+    --color-barra-evolucion: #795546;
+    --fuente-id: Ubuntu;
+    --fuente-Nombre-Pokemon: Ubuntu, Creative Fabrica;
+    --fuente-Nombre-Tipo: Ubuntu;
+}

@@ -1,0 +1,87 @@
+.carta {
+    background-color: var(--color-carta-fondo-texto);
+    animation: fadeInUp 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+.no-buscada {
+    display: none;
+}
+
+.carta-header {
+    width: 100%;
+    background-color: var(--color-carta-fondo-imagen);
+    padding: 0;
+    position: relative;
+}
+.carta-header-centrar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta-header-centrar > img {
+    max-width: 100%;
+}
+.carta-header-id {
+    display: inline;
+    background-color: var(--color-fondo-id);
+    color: var(--color-texto-id);
+    font-size: small;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--fuente-id);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+
+.carta-section {
+    padding: 10px;
+}
+
+.carta-section > h2 {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.section-container-tipos {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px;
+    list-style-type: none;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.carta-div {
+    border-left: 2px solid var(--color-barra-evolucion);
+    padding-left: 2px;
+    margin-top: 8px;
+}
+
+.carta-div-p1 {
+    color: var(--color-texto-id);
+    font-size: 0.7em;
+    margin: 0;
+}
+.carta-div-p2 {
+    margin: 0;
+    text-transform: lowercase;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0.2;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

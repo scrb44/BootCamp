@@ -1,0 +1,157 @@
+/* Tipos de Pokémon con gradiente */
+
+.tipo {
+    font-size: .7em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    padding: 0.2em 0.6em;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: 0.2s;
+
+    --grad1: #ffffff;
+    --grad2: #ffffff;
+    --grad1-hover: #ffffff;
+    --grad2-hover: #ffffff;
+
+    background-image: linear-gradient(135deg, var(--grad1), var(--grad2));
+    background-size: 200% 200%;
+    background-position: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tipo:hover {
+    background-image: linear-gradient(135deg, var(--grad1-hover), var(--grad2-hover));
+    background-size: 200% 200%;
+    background-position: center;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.type-normal {
+    --grad1: #B6B697;
+    --grad2: #DCDCB4;
+    --grad1-hover: #99996C;
+    --grad2-hover: #C9C982;
+}
+
+.type-fire {
+    --grad1: #FF6B1F;
+    --grad2: #FFB347;
+    --grad1-hover: #E64900;
+    --grad2-hover: #FFA347;
+}
+
+.type-water {
+    --grad1: #3B9EFF;
+    --grad2: #85D3FF;
+    --grad1-hover: #217EDB;
+    --grad2-hover: #6BC4F5;
+}
+
+.type-grass {
+    --grad1: #4CCB4C;
+    --grad2: #A4EC75;
+    --grad1-hover: #2FA832;
+    --grad2-hover: #87D150;
+}
+
+.type-electric {
+    --grad1: #FFD700;
+    --grad2: #FFF36B;
+    --grad1-hover: #E6B800;
+    --grad2-hover: #F5E150;
+}
+
+.type-ice {
+    --grad1: #73E0E0;
+    --grad2: #C6FFFF;
+    --grad1-hover: #4AC5C5;
+    --grad2-hover: #A0F2F2;
+}
+
+.type-fighting {
+    --grad1: #D73737;
+    --grad2: #F17676;
+    --grad1-hover: #B02020;
+    --grad2-hover: #E04D4D;
+}
+
+.type-poison {
+    --grad1: #B84CB8;
+    --grad2: #E296E2;
+    --grad1-hover: #9F2A9F;
+    --grad2-hover: #D870D8;
+}
+
+.type-ground {
+    --grad1: #C9A44D;
+    --grad2: #F3D27A;
+    --grad1-hover: #A78238;
+    --grad2-hover: #E6BE5A;
+}
+
+.type-flying {
+    --grad1: #9FA8FF;
+    --grad2: #D0D5FF;
+    --grad1-hover: #7D87E0;
+    --grad2-hover: #B0B7F5;
+}
+
+.type-psychic {
+    --grad1: #FF5D9E;
+    --grad2: #FFA8C7;
+    --grad1-hover: #E03C7F;
+    --grad2-hover: #F880B0;
+}
+
+.type-bug {
+    --grad1: #A8C820;
+    --grad2: #D5EC4F;
+    --grad1-hover: #8CA815;
+    --grad2-hover: #BFD943;
+}
+
+.type-rock {
+    --grad1: #C2A733;
+    --grad2: #E6D36A;
+    --grad1-hover: #A08A28;
+    --grad2-hover: #D0BD50;
+}
+
+.type-ghost {
+    --grad1: #7E5DAE;
+    --grad2: #B699E6;
+    --grad1-hover: #5D4190;
+    --grad2-hover: #9C7FD0;
+}
+
+.type-dragon {
+    --grad1: #7038F8;
+    --grad2: #A270F9;
+    --grad1-hover: #5A20E0;
+    --grad2-hover: #8752E8;
+}
+
+.type-dark {
+    --grad1: #5A4A42;
+    --grad2: #8A7866;
+    --grad1-hover: #3F332D;
+    --grad2-hover: #6E5A4C;
+}
+
+.type-steel {
+    --grad1: #A0A0C0;
+    --grad2: #D0D0F0;
+    --grad1-hover: #7F7FA8;
+    --grad2-hover: #B0B0E0;
+}
+
+.type-fairy {
+    --grad1: #F78CA2;
+    --grad2: #FFD6DD;
+    --grad1-hover: #E46888;
+    --grad2-hover: #FFB2C2;
+}
