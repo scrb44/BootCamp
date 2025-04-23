@@ -2,6 +2,7 @@
 import React from "react";
 import BotonTipo from "./BotonTipo";
 import { Pokemon } from "../types/pokemon";
+import { useNavigate } from "react-router-dom";
 import "../css/CartaPokemon.css";
 
 interface Props {
@@ -9,11 +10,21 @@ interface Props {
 }
 
 const CartaPokemon: React.FC<Props> = ({ pokemon }) => {
+    const navigate = useNavigate();
+
+    const enviar = () => {
+        navigate("/pokemon/" + pokemon.name);
+    };
+
     return (
         <article className="carta sombra">
             <header className="carta-header">
                 <div className="carta-header-centrar">
-                    <img src={pokemon.image ?? ""} alt={pokemon.name} />
+                    <img
+                        src={pokemon.image}
+                        alt={pokemon.name}
+                        onClick={enviar}
+                    />
                 </div>
                 <h4 className="carta-header-id">ID/{pokemon.id}</h4>
             </header>
@@ -25,8 +36,7 @@ const CartaPokemon: React.FC<Props> = ({ pokemon }) => {
                         <BotonTipo key={tipo} tipo={tipo} />
                     ))}
                 </ul>
-
-                {pokemon.evolvesFrom !== "" && (
+                {pokemon.evolvesFrom && (
                     <div className="carta-div">
                         <p className="carta-div-p1">Evoluciona de:</p>
                         <p className="carta-div-p2">{pokemon.evolvesFrom}</p>

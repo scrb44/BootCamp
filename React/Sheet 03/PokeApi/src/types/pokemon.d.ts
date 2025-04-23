@@ -4,7 +4,9 @@ export interface Pokemon {
     types: string[];
     evolvesFrom?: string;
     image: string;
+    additionalinfo?: AdditionaInfoPokemon;
 }
+export interface AdditionalInfoPokemon {}
 
 export interface PokemonListResponse {
     results: Array<{

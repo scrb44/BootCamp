@@ -18,30 +18,26 @@ export async function initializePokemonList(): Promise<void> {
         `pokemon?limit=${data.count}`
     );
 
-    /*
-    const orderedList = fullList.results.sort((a, b) => {
-        const idA = parseInt(a.url.split('/').slice(-2)[0]);
-        const idB = parseInt(b.url.split('/').slice(-2)[0]);
-        return idA - idB;
-    });
-    setItem(POKE_LIST_KEY, orderedList);
-    */
-
     setItem(POKE_LIST_KEY, fullList.results);
 }
+
+// pokemon.ts
 
 export async function getVariousPokemons(
     itemsToLoad: number,
     offset: number,
     searchTerm: string = ""
-): Promise<Pokemon[]> {
+): Promise<{ pokemons: Pokemon[]; hasMore: boolean }> {
     await initializePokemonList();
 
     const listaCompleta =
         getItem<{ name: string; url: string }[]>(POKE_LIST_KEY) || [];
-    const filtrados = listaCompleta
-        .filter((p) => p.name.toLowerCase().includes(searchTerm.toLowerCase()))
-        .slice(offset, offset + itemsToLoad);
+
+    const listaFiltrada = listaCompleta.filter((p) =>
+        p.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const filtrados = listaFiltrada.slice(offset, offset + itemsToLoad);
 
     const uncached = filtrados.filter((p) => {
         const id = p.url.split("/").slice(-2)[0];
@@ -69,8 +65,12 @@ export async function getVariousPokemons(
         });
     }
 
-    return filtrados.map((p) => {
+    const pokemons = filtrados.map((p) => {
         const id = p.url.split("/").slice(-2)[0];
         return getItem<Pokemon>(`${POKE_CACHE_PREFIX}${id}`)!;
     });
+
+    const hasMore = offset + itemsToLoad < listaFiltrada.length;
+
+    return { pokemons, hasMore };
 }
