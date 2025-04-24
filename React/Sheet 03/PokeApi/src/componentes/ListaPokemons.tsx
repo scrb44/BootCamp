@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ListaPokemons: React.FC<Props> = ({ pokemons, isLoading }) => {
-    if (pokemons.length === 0)
+    if (pokemons.length === 0 && !isLoading)
         return <p className="no-resultados">¡No se encontraron Pokémon!</p>;
 
     return (

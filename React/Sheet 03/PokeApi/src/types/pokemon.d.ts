@@ -4,6 +4,7 @@ export interface Pokemon {
     types: string[];
     evolvesFrom?: string;
     image: string;
+    fav: boolean;
     additionalinfo?: AdditionaInfoPokemon;
 }
 export interface AdditionalInfoPokemon {}

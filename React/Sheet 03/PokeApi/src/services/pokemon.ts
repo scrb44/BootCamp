@@ -9,6 +9,8 @@ import { getItem, setItem } from "./cache";
 
 const POKE_LIST_KEY = "poke-lista-completa";
 const POKE_CACHE_PREFIX = "poke-";
+const DEAFAULT_IMG =
+    "https://upload.wikimedia.org/wikipedia/commons/5/53/Poké_Ball_icon.svg";
 
 export async function initializePokemonList(): Promise<void> {
     if (getItem(POKE_LIST_KEY)) return;
@@ -20,8 +22,6 @@ export async function initializePokemonList(): Promise<void> {
 
     setItem(POKE_LIST_KEY, fullList.results);
 }
-
-// pokemon.ts
 
 export async function getVariousPokemons(
     itemsToLoad: number,
@@ -54,12 +54,14 @@ export async function getVariousPokemons(
         );
 
         pokemonData.forEach((data, index) => {
+            const imgUrl = data.sprites.other["official-artwork"].front_default;
             const pokemon: Pokemon = {
                 id: data.id,
                 name: data.name,
                 types: data.types.map((t) => t.type.name),
                 evolvesFrom: speciesData[index]?.evolves_from_species?.name,
-                image: data.sprites.other["official-artwork"].front_default,
+                image: imgUrl ? imgUrl : DEAFAULT_IMG,
+                fav: false,
             };
             setItem(`${POKE_CACHE_PREFIX}${data.id}`, pokemon);
         });
@@ -73,4 +75,18 @@ export async function getVariousPokemons(
     const hasMore = offset + itemsToLoad < listaFiltrada.length;
 
     return { pokemons, hasMore };
+}
+
+export async function getPokemonDetailedInfo(name: string) {
+    let existsPokemon = true;
+    const listaCompleta =
+        getItem<{ name: string; url: string }[]>(POKE_LIST_KEY) || [];
+    const po = listaCompleta.filter((p) => {
+        p.name.toLowerCase() == name.toLowerCase();
+    });
+
+    // const pokeDetailedInfo = get<PokemonApiResponse>(po.url);
+    // console.log(pokeDetailedInfo);
+
+    return { po, existsPokemon };
 }

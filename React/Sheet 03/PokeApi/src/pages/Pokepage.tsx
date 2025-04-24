@@ -1,15 +1,15 @@
-import { useParams } from "react-router-dom";
-import CartaPokemon from "../componentes/CartaPokemon";
+import { useNavigate, useParams } from "react-router-dom";
 
 function PokePage() {
     const { pokeName } = useParams();
+    const navigate = useNavigate();
 
-    // const pokemon = getItem(pokeName);
-
-    console.log(pokeName);
-    // console.log(pokemon);
-
-    return <p>{pokeName}</p>;
+    return (
+        <>
+            <p>{pokeName}</p>
+            <button onClick={() => navigate("/")}>Volver a pokedex</button>
+        </>
+    );
 }
 
 export default PokePage;
