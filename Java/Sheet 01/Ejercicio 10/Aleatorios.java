@@ -26,5 +26,7 @@ public class Aleatorios {
 
         System.out.println("¡Enhorabuena! ¡Has acetado el número!");
         System.out.println("El número era efectivamente " + numAdivinar);
+
+        sc.close();
     }
 }
