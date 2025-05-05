@@ -4,7 +4,7 @@ public class Aleatorios {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        final int numAdivinar = (int) (Math.random() * 100);
+        final int numAdivinar = (int) (Math.random() * 100 + 1);
         int prueba;
         boolean adivinado = false;
 
