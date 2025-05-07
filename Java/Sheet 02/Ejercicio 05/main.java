@@ -74,7 +74,7 @@ class Empleado extends Persona implements Imprimible {
     }
 }
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         Estudiante ana = new Estudiante("Ana", 20, "Ingeniería");

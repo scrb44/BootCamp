@@ -30,16 +30,25 @@ class Persona {
     }
 }
 
+class Estudiante extends Persona {
+    private String grado;
+
+    public Estudiante(String nombre, int edad, String grado) {
+        super(nombre, edad);
+        this.grado = grado;
+    }
+
+    @Override
+    public void mostrarDetalles() {
+        super.mostrarDetalles();
+        System.out.println("Grado: " + this.grado);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        Persona juan = new Persona("Juan", 25);
-        System.out.println("Datos antes de modificarlos: ");
-        juan.mostrarDetalles();
+        Estudiante ana = new Estudiante("Ana", 20, "Ingeniería");
 
-        juan.setNombre("Carlos");
-        juan.setEdad(30);
-
-        System.out.println("Datos modificados: ");
-        juan.mostrarDetalles();
+        ana.mostrarDetalles();
     }
 }

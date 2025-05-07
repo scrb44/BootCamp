@@ -1,3 +1,19 @@
+class Caja<T> {
+    private T contenido;
+
+    public Caja(T contenido) {
+        this.contenido = contenido;
+    }
+
+    public void setContenido(T contenido) {
+        this.contenido = contenido;
+    }
+
+    public T getContenido() {
+        return this.contenido;
+    }
+}
+
 class Persona {
     private String nombre;
     private int edad;
@@ -31,15 +47,18 @@ class Persona {
 }
 
 public class Main {
+    public static <U> U identidad(U valor) {
+        return valor;
+    }
+
     public static void main(String[] args) {
-        Persona juan = new Persona("Juan", 25);
-        System.out.println("Datos antes de modificarlos: ");
-        juan.mostrarDetalles();
+        Caja<Persona> c1 = new Caja(new Persona("Sofía", 27));
+        Caja<String> c2 = new Caja("Hola mundo");
 
-        juan.setNombre("Carlos");
-        juan.setEdad(30);
+        c1.getContenido().mostrarDetalles();
 
-        System.out.println("Datos modificados: ");
-        juan.mostrarDetalles();
+        System.out.println(c2.getContenido());
+
+        identidad(c1);
     }
 }

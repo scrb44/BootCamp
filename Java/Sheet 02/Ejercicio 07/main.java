@@ -57,7 +57,7 @@ class Utilidades {
     }
 }
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Empleado p1 = new Empleado("Sofía", 27, 2000);
         Empleado p2 = new Empleado("Gustavo", 35, 2200);

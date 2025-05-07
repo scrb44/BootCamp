@@ -12,7 +12,7 @@ class Persona {
     }
 }
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Persona juan = new Persona("Juan", 25);
         juan.mostrarDetalles();
